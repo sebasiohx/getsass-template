@@ -1,0 +1,23 @@
+{
+    "version": 3,
+    "mappings": "AOAA,AAAA,IAAI,CAAC;EACD,SAAS,EAAC,IAAC;CACd;;AAED,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,UAAU;EACvB,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "../sass/style.scss",
+        "../sass/utilities/_all.scss",
+        "../sass/utilities/_variables.scss",
+        "../sass/utilities/_colors.scss",
+        "../sass/utilities/_fonts.scss",
+        "../sass/utilities/_mixins.scss",
+        "../sass/layout/_all.scss",
+        "../sass/layout/_general.scss",
+        "../sass/layout/_header.scss",
+        "../sass/layout/_footer.scss",
+        "../sass/components/_all.scss",
+        "../sass/components/_buttons.scss",
+        "../sass/components/_carousel.scss",
+        "../sass/pages/_all.scss",
+        "../sass/pages/_home.scss"
+    ],
+    "names": [],
+    "file": "style.min.css"
+}

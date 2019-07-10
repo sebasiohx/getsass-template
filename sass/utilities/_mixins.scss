@@ -1,0 +1,103 @@
+//para el tamaño de fuente
+@mixin fSize($sz) {
+    $szPx: #{$sz}px;
+    $szRem: ($sz*100 / $fontSizeG) / 100;
+    font-size: $szPx;
+    font-size: #{$szRem}rem;
+}
+
+//para los media queries
+@mixin media($querie) {
+    @if $querie=="xs" {
+        @media only screen and (max-width: $breakpoint-mobile) {
+            @content;
+        }
+    }
+
+    @else if $querie=="sm" {
+        @media only screen and (max-width: $breakpoint-tablet-landscape) and (orientation: landscape),
+        only screen and (min-width: $breakpoint-mobile + 1) and (max-width: $breakpoint-tablet) {
+            @content;
+        }
+    }
+
+    @else if $querie=="md" {
+        @media only screen and (min-width: $breakpoint-laptop) {
+            @content;
+        }
+    }
+
+    @else if $querie=="lg" {
+        @media only screen and (min-width: $breakpoint-monitor) {
+            @content;
+        }
+    }
+
+    @else {
+        @media only screen and (#{$querie}) {
+            @content;
+        }
+    }
+}
+
+//transition
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+
+//transform
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transition: $transition;
+    -ms-transform: $transform;
+    transform: $transform;
+}
+
+//animacion keyframe
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+//animacion
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+//para agregar propiedades a algun pseudo elemento
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+//para agregar clearfix por css
+%clearfix {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
